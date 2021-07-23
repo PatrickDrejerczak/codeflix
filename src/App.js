@@ -16,7 +16,10 @@ const App = () => {
   getData();
 
   }, [])
-  return <div>{title}</div>;
+  return 
+  <>
+
+  </>;
 };
 
 export default App;
