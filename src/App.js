@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import HomePage from "./Page/HomePage/HomePage";
 const myKey = process.env.REACT_APP_API_KEY;
 
 console.log(myKey);
@@ -15,8 +16,10 @@ const App = () => {
     };
     getData();
   }, []);
-  return;
-  <></>;
+  return (
+    <>
+      <HomePage />
+    </>);
 };
 
 export default App;
