@@ -2,7 +2,6 @@ import React from 'react'
 import './style.css'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
 import SingleCarousel from './SingleCarousel';
 
 const Carousels = ({ popularMovies, popularTV, trending, actionMovies}) => {
