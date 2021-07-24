@@ -1,6 +1,7 @@
 import React from 'react'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
+import { Link } from "react-router-dom";
+import { Nav } from 'react-bootstrap'
 import { Swiper, SwiperSlide } from 'swiper/react'; import './style.css'
 import './style.css'
 const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adventureMovies, comedyMovies, setModalShow,setMovie }) => {
