@@ -2,7 +2,8 @@ import React from 'react'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Link } from "react-router-dom";
 import { Nav } from 'react-bootstrap'
-import { Swiper, SwiperSlide } from 'swiper/react'; import './style.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import image from './notfound.jpeg'
 import './style.css'
 const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adventureMovies, comedyMovies, setModalShow,setMovie }) => {
     const handleSlideClicked = (object) => {
@@ -21,7 +22,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
-                className="container single_carousel"
+                className="single_carousel"
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
@@ -38,10 +39,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                         slidesPerView: 3,
                         slidesPerGroup: 3,
                     },
-                    600: {
-                        slidesPerView: 4,
-                        slidesPerGroup: 4,
-                    },
+                    
                     // when window width is >= 640px
                     900: {
                         slidesPerView: 5,
@@ -52,9 +50,9 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 {trending ? trending.map((show) => {
                     return (
                             <SwiperSlide onClick={() => {handleSlideClicked(show)}} key="1">
-                                {show.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${show.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                                {show.backdrop_path ? <img className={"image"} src={`https://image.tmdb.org/t/p/original${show.backdrop_path}`}></img> : <img className={"image"} src={image}></img>}
 
-                                {show.media_type == "tv" ? <h5>{show.name}</h5> : <h5>{show.title}</h5>}
+                                {show.media_type == "tv" ? <h6>{show.name}</h6> : <h6>{show.title}</h6>}
 
                             </SwiperSlide>
                 )
@@ -62,18 +60,18 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 {popularMovies ? popularMovies.map((movie) => {
 
                     return <SwiperSlide onClick={() => {handleSlideClicked(movie)}} key="2">
-                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        {movie.backdrop_path ? <img className={"image"} src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img className={"image"} src={image}></img>}
 
-                        <h5>{movie.title}</h5>
+                        <h6>{movie.title}</h6>
 
                     </SwiperSlide>
                 }) : ""}
 
                 {popularTV ? popularTV.map((tv) => {
                     return <SwiperSlide onClick={() => {handleSlideClicked(tv)}} key="3">
-                        {tv.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${tv.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        {tv.backdrop_path ? <img className={"image"} src={`https://image.tmdb.org/t/p/original${tv.backdrop_path}`}></img> : <img className={"image"} src={image}></img>}
 
-                        <h5>{tv.name}</h5>
+                        <h6>{tv.name}</h6>
                     </SwiperSlide>
                 }) : ""}
 
@@ -81,25 +79,25 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
 
                 {actionMovies ? actionMovies.map((movie) => {
                     return <SwiperSlide onClick={() => {handleSlideClicked(movie)}} key="4">
-                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        {movie.backdrop_path ? <img className={"image"} src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img className={"image"} src={image}></img>}
 
-                        <h5>{movie.title}</h5>
+                        <h6>{movie.title}</h6>
                     </SwiperSlide>
                 }) : ""}
 
                 {comedyMovies ? comedyMovies.map((movie) => {
                     return <SwiperSlide onClick={() => {handleSlideClicked(movie)}} key="5">
-                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        {movie.backdrop_path ? <img className={"image"} src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img className={"image"} src={image}></img>}
 
-                        <h5>{movie.title}</h5>
+                        <h6>{movie.title}</h6>
                     </SwiperSlide>
                 }) : ""}
 
                 {adventureMovies ? adventureMovies.map((movie) => {
                     return <SwiperSlide onClick={() => {handleSlideClicked(movie)}} key="6">
-                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        {movie.backdrop_path ? <img className={"image"} src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img className={"image"} src={image}></img>}
 
-                        <h5>{movie.title}</h5>
+                        <h6>{movie.title}</h6>
                     </SwiperSlide>
                 }) : ""}
             </Swiper>
