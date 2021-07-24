@@ -4,7 +4,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import SingleCarousel from './SingleCarousel';
 
-const Carousels = ({ popularMovies, popularTV, trending, actionMovies}) => {
+const Carousels = ({ popularMovies, popularTV, trending, actionMovies, adventureMovies, comedyMovies}) => {
     return (
         <>
             <h2>Trending</h2>
@@ -23,7 +23,14 @@ const Carousels = ({ popularMovies, popularTV, trending, actionMovies}) => {
             <h2>Action</h2>
             <SingleCarousel key={"action"} actionMovies={actionMovies}/>
             <br></br>
-            <SingleCarousel />
+
+            <h2>Adventure</h2>
+            <SingleCarousel key={"adventure"} adventureMovies={adventureMovies}/>
+            <br></br>
+
+            <h2>Comedy</h2>
+            <SingleCarousel key={"comedy"} comedyMovies={comedyMovies}/>
+            <br></br>
         </>
     )
 }
