@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Narrow:wght@400;500&family=Fredoka+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 5%;
+  background-color: #b3bce9;
+}
+
+header #logo {
+  cursor: pointer;
+  font-family: 'Fredoka One', cursive;
+  font-size: 3rem;
+  color: #333;
+  padding-right: 150px;
+}
+
+header #logo:hover {
+  color: #0088a9;
+  cursor: pointer;
+}
+
+header li,
+header a {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #333;
+  text-decoration: none;
+  margin: auto;
+}
+
+header .nav-links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .nav-links li {
+  padding: 0 20px;
+  padding: 20px;
+  padding: 20px 50px;
+  text-align: center;
+}
+
+header .nav-links a {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+header .nav-links a:hover {
+  color: #0088a9;
+}
+
+header .hamburger-menu {
+  width: 55px;
+  height: 55px;
+  background-color: #0088a9;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 300;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header .change .hamburger-menu {
+  background-color: #333;
+}
+
+header .line {
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  margin: 2px 0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header .change .line-1 {
+  -webkit-transform: rotate(-40deg) translateY(-5px);
+          transform: rotate(-40deg) translateY(-5px);
+  background-color: #0088a9;
+}
+
+header .change .line-2 {
+  opacity: 0;
+}
+
+header .change .line-3 {
+  -webkit-transform: rotate(40deg) translateY(5px);
+          transform: rotate(40deg) translateY(5px);
+  background-color: #0088a9;
+}
+
+header .bg-cover {
+  background-color: #0088a9;
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  top: 35px;
+  right: 35px;
+  z-index: 100;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+header .change .bg-cover {
+  -webkit-transform: scale(15);
+          transform: scale(15);
+}
+
+header .nav-list {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  z-index: 200;
+}
+
+header .change .nav-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+header .nav-item {
+  margin: 1.5vh 0;
+}
+
+header .nav-link {
+  position: relative;
+  bottom: 450px;
+  left: 200px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #333;
+  -webkit-transition: letter-spacing 0.4s;
+  transition: letter-spacing 0.4s;
+}
+/*# sourceMappingURL=styles.css.map */
