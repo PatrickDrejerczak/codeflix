@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Narrow:wght@400;500&family=Fredoka+One&display=swap');
+// $primaryBlue: rgba(0, 136, 169, 1);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	padding: 0 5%;
+	background-color: #b3bce9;
+
+	#logo {
+		cursor: pointer;
+		font-family: 'Fredoka One', cursive;
+		font-size: 3rem;
+		color: #333;
+		padding-right: 150px;
+	}
+	#logo:hover {
+		color: #0088a9;
+		cursor: pointer;
+	}
+	li,
+	a {
+		font-family: 'Archivo Narrow', sans-serif;
+		font-weight: 500;
+		font-size: 1.5rem;
+		color: #333;
+		text-decoration: none;
+		margin: auto;
+	}
+
+	.nav-links {
+		list-style: none;
+		display: flex;
+		li {
+			padding: 0 20px;
+			padding: 20px;
+			padding: 20px 50px;
+			text-align: center;
+		}
+		a {
+			transition: all 0.3s ease 0s;
+		}
+		a:hover {
+			color: #0088a9;
+		}
+	}
+
+	// //
+
+	.hamburger-menu {
+		width: 55px;
+		height: 55px;
+		background-color: #0088a9;
+		position: fixed;
+		top: 30px;
+		right: 30px;
+		border: none;
+		border-radius: 50%;
+		outline: none;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		z-index: 300;
+		transition: all 0.5s;
+	}
+
+	.change .hamburger-menu {
+		background-color: #333;
+	}
+
+	.line {
+		width: 30px;
+		height: 2px;
+		background-color: #333;
+		margin: 2px 0;
+		transform-origin: right;
+		transition: all 0.5s;
+	}
+
+	.change .line-1 {
+		transform: rotate(-40deg) translateY(-5px);
+		background-color: #0088a9;
+	}
+
+	.change .line-2 {
+		opacity: 0;
+	}
+
+	.change .line-3 {
+		transform: rotate(40deg) translateY(5px);
+		background-color: #0088a9;
+	}
+
+	.bg-cover {
+		background-color: #0088a9;
+		width: 45px;
+		height: 45px;
+		position: fixed;
+		top: 35px;
+		right: 35px;
+		z-index: 100;
+		border-radius: 50%;
+		transition: transform 0.5s;
+	}
+
+	.change .bg-cover {
+		transform: scale(15);
+	}
+
+	.nav-list {
+		height: 100vh;
+		width: 100vw;
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		z-index: 200;
+	}
+
+	.change .nav-list {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.nav-item {
+		margin: 1.5vh 0;
+	}
+
+	.nav-link {
+		position: relative;
+		bottom: 450px;
+		left: 200px;
+		font-weight: 600;
+		font-size: 1rem;
+		letter-spacing: 0.4rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #333;
+		transition: letter-spacing 0.4s;
+	}
+}
