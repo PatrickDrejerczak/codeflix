@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from './Page/HomePage/HomePage';
 import SinglePage from './Page/SinglePage/SinglePage';
-import 'bootstrap/dist/css/bootstrap.min.css';
 const myKey = process.env.REACT_APP_API_KEY;
 
 console.log(myKey);
