@@ -102,7 +102,7 @@ const HomePage = () => {
         </Modal.Header>
         <Modal.Body>
           {movie ? <>
-            <h1>{movie.title}</h1>
+            {(movie.name) ? <h2>{movie.name}</h2> : <h2>{movie.title}</h2>}
             <p>{movie.overview}</p>
           </> : ""}
         </Modal.Body>
