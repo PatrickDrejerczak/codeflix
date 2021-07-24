@@ -1,12 +1,9 @@
-import React from 'react'
-import './style.css'
+import React from 'react';
+import './style.css';
 
 const Header = () => {
-    return (
-        <div>
-            Header
-        </div>
-    )
-}
+	return <div>hellom </div>;
+};
 
-export default Header
+export default Header;
+// TEST
