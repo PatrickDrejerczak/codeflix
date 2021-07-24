@@ -1,6 +1,8 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import HomePage from "./Page/HomePage/HomePage";
+import SinglePage from "./Page/SinglePage/SinglePage";
 const myKey = process.env.REACT_APP_API_KEY;
 
 console.log(myKey);
@@ -16,10 +18,16 @@ const App = () => {
     };
     getData();
   }, []);
+  
   return (
-    <>
-      <HomePage />
-    </>);
+    <div className="App">
+    <Switch>
+      <Route path="/" exact component={HomePage} />
+      <Route path="/movie/:id" component={SinglePage} />
+    </Switch>
+  </div>
+
+    );
 };
 
 export default App;
