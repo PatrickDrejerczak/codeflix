@@ -1,10 +1,10 @@
 
 .swiper-button-prev {
-    color: black;
+    color: white;
   }
 
   .swiper-button-next {
-      color: black;
+      color: white;
   }
     .container {
       width: 100%;
@@ -32,4 +32,21 @@
       -ms-flex-align: center;
       -webkit-align-items: center;
       align-items: center;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    h5 {
+      color: white;
+      position: absolute;
+      bottom: -10px;
+      text-shadow:
+        0.07em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black;
+      
     }
