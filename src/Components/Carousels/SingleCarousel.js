@@ -15,7 +15,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
-                className="container"
+                className="container single_carousel"
             >
                 {trending ? trending.map((show) => {
                     return <SwiperSlide>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Narrow:wght@400;500&family=Fredoka+One&display=swap');
 
 .swiper-button-prev {
     color: white;
@@ -48,6 +50,17 @@
         0.07em 0 black,
         0 0.07em black,
         -0.07em 0 black,
-        0 -0.07em black;
-      
+        0 -0.07em black; 
+    }
+    h2 {
+      font-family: 'Fredoka One', cursive;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .carousels {
+      padding: 20px 0 10px 0
+    }
+
+    .single_carousel {
+      margin-bottom: 20px;
     }
