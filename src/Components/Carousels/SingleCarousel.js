@@ -3,7 +3,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react'; import './style.css'
 import './style.css'
-const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies }) => {
+const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adventureMovies, comedyMovies }) => {
 
     console.log(popularTV);
     return (
@@ -19,7 +19,8 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies }) =>
             >
                 {trending ? trending.map((show) => {
                     return <SwiperSlide>
-                        <img src={`https://image.tmdb.org/t/p/original${show.backdrop_path}`}></img>
+                        {show.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${show.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        
                         {show.media_type == "tv" ? <h5>{show.name}</h5> : <h5>{show.title}</h5>}
 
                     </SwiperSlide>
@@ -27,7 +28,8 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies }) =>
                 {popularMovies ? popularMovies.map((movie) => {
 
                     return <SwiperSlide>
-                        <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img>
+                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        
                         <h5>{movie.title}</h5>
 
                     </SwiperSlide>
@@ -35,7 +37,8 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies }) =>
 
                 {popularTV ? popularTV.map((tv) => {
                     return <SwiperSlide>
-                        <img src={`https://image.tmdb.org/t/p/original${tv.backdrop_path}`}></img>
+                        {tv.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${tv.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        
                         <h5>{tv.name}</h5>
                     </SwiperSlide>
                 }) : <h3>Loading</h3>}
@@ -44,7 +47,24 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies }) =>
 
                 {actionMovies ? actionMovies.map((movie) => {
                     return <SwiperSlide>
-                        <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img>
+                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        
+                        <h5>{movie.title}</h5>
+                    </SwiperSlide>
+                }) : <h3>Loading</h3>}
+
+                {comedyMovies ? comedyMovies.map((movie) => {
+                    return <SwiperSlide>
+                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        
+                        <h5>{movie.title}</h5>
+                    </SwiperSlide>
+                }) : <h3>Loading</h3>}
+
+                {adventureMovies ? adventureMovies.map((movie) => {
+                    return <SwiperSlide>
+                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        
                         <h5>{movie.title}</h5>
                     </SwiperSlide>
                 }) : <h3>Loading</h3>}
