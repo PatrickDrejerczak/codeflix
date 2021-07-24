@@ -46,7 +46,7 @@ const SearchBox = () => {
         <Container>
           <Row className="search_box justify-content-between">
             <Col xs={12} md={8} lg={6}>
-              <Navbar.Brand href="#home">Codeflix</Navbar.Brand>
+              <Navbar.Brand>Codeflix</Navbar.Brand>
             </Col>
             <Col xs={8} md={6} lg={6}>
               <InputGroup className="mb-3">
