@@ -7,7 +7,7 @@ import SingleCarousel from './SingleCarousel';
 const Carousels = ({ popularMovies, popularTV, trending, actionMovies, adventureMovies, comedyMovies}) => {
     return (
         <div className="carousels">
-            <h2>Trending</h2>
+            <h2>Trending Now</h2>
             <SingleCarousel key={"trending"} trending={trending} />
             <br></br>
             <h2>Movie</h2>

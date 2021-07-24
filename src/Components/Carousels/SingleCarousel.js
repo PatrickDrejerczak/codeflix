@@ -9,7 +9,8 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
     return (
         <>
             <Swiper
-                spaceBetween={10}
+                spaceBetween={5}
+                slidesPerGroup={5}
                 slidesPerView={5}
                 navigation
                 scrollbar={{ draggable: true }}
@@ -19,28 +20,34 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
-                      },
+                        slidesPerGroup: 1,
+
+                    },
                     // when window width is >= 640px
-                      // when window width is >= 480px
-                      240: {
+                    // when window width is >= 480px
+                    240: {
                         slidesPerView: 2,
-                      },
-                      540: {
+                        slidesPerGroup: 2,
+                    },
+                    540: {
                         slidesPerView: 3,
-                      },
-                      600: {
+                        slidesPerGroup: 3,
+                    },
+                    600: {
                         slidesPerView: 4,
-                      },
-                      // when window width is >= 640px
-                      900: {
+                        slidesPerGroup: 4,
+                    },
+                    // when window width is >= 640px
+                    900: {
                         slidesPerView: 5,
-                      },
-                  }}
+                        slidesPerGroup: 5,
+                    },
+                }}
             >
                 {trending ? trending.map((show) => {
                     return <SwiperSlide>
                         {show.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${show.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
-                        
+
                         {show.media_type == "tv" ? <h5>{show.name}</h5> : <h5>{show.title}</h5>}
 
                     </SwiperSlide>
@@ -49,7 +56,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
 
                     return <SwiperSlide>
                         {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
-                        
+
                         <h5>{movie.title}</h5>
 
                     </SwiperSlide>
@@ -58,7 +65,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 {popularTV ? popularTV.map((tv) => {
                     return <SwiperSlide>
                         {tv.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${tv.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
-                        
+
                         <h5>{tv.name}</h5>
                     </SwiperSlide>
                 }) : ""}
@@ -68,7 +75,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 {actionMovies ? actionMovies.map((movie) => {
                     return <SwiperSlide>
                         {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
-                        
+
                         <h5>{movie.title}</h5>
                     </SwiperSlide>
                 }) : ""}
@@ -76,7 +83,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 {comedyMovies ? comedyMovies.map((movie) => {
                     return <SwiperSlide>
                         {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
-                        
+
                         <h5>{movie.title}</h5>
                     </SwiperSlide>
                 }) : ""}
@@ -84,7 +91,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 {adventureMovies ? adventureMovies.map((movie) => {
                     return <SwiperSlide>
                         {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
-                        
+
                         <h5>{movie.title}</h5>
                     </SwiperSlide>
                 }) : ""}
