@@ -25,7 +25,10 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                       240: {
                         slidesPerView: 2,
                       },
-                      800: {
+                      540: {
+                        slidesPerView: 3,
+                      },
+                      600: {
                         slidesPerView: 4,
                       },
                       // when window width is >= 640px
