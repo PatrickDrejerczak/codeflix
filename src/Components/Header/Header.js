@@ -7,11 +7,10 @@ import './styles.css';
 const Header = (x) => {
 	return (
 		<myHeader>
-			<body>
 				<header>
 					<h1 id="logo">CodeFlix</h1>
-					<div class="">
-						<ul class="nav-links">
+					<div className="">
+						<ul className="nav-links">
 							<li>
 								<a href="#">Movies</a>
 							</li>
@@ -50,7 +49,6 @@ const Header = (x) => {
 						</div>
 					</nav>
 				</header>
-			</body>
 		</myHeader>
 	);
 };
