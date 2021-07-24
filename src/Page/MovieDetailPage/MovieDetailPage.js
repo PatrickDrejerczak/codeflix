@@ -7,14 +7,14 @@ import { Container, Jumbotron, Button, Image } from 'react-bootstrap'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
-const SinglePage = () => {
+const MovieDetailPage = () => {
     const { id } = useParams()
     const [movieDetail, setMovieDetail] = useState({})
 
     useEffect(() => {
 
         const fetchMovieDetail = async () => {
-            const resp = await fetch (`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
+            const resp = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
             const json = await resp.json()
             console.log({ json })
             setMovieDetail(json)
@@ -25,6 +25,7 @@ const SinglePage = () => {
 
     return (
         <div>
+            <Header />
             <Container>
                 <Jumbotron className='bg-white'>
                     <h1>{movieDetail.title}</h1>
@@ -52,10 +53,10 @@ const SinglePage = () => {
                     <hr className='solid'></hr>
                 </Jumbotron>
             </Container>
-            
+
         </div>
     )
 }
 
-export default SinglePage
+export default MovieDetailPage
 
