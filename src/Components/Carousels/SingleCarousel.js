@@ -24,7 +24,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                         {show.media_type == "tv" ? <h5>{show.name}</h5> : <h5>{show.title}</h5>}
 
                     </SwiperSlide>
-                }) : <h3>Loading</h3>}
+                }) : ""}
                 {popularMovies ? popularMovies.map((movie) => {
 
                     return <SwiperSlide>
@@ -33,7 +33,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                         <h5>{movie.title}</h5>
 
                     </SwiperSlide>
-                }) : <h3>Loading</h3>}
+                }) : ""}
 
                 {popularTV ? popularTV.map((tv) => {
                     return <SwiperSlide>
@@ -41,7 +41,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                         
                         <h5>{tv.name}</h5>
                     </SwiperSlide>
-                }) : <h3>Loading</h3>}
+                }) : ""}
 
 
 
@@ -51,7 +51,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                         
                         <h5>{movie.title}</h5>
                     </SwiperSlide>
-                }) : <h3>Loading</h3>}
+                }) : ""}
 
                 {comedyMovies ? comedyMovies.map((movie) => {
                     return <SwiperSlide>
@@ -59,7 +59,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                         
                         <h5>{movie.title}</h5>
                     </SwiperSlide>
-                }) : <h3>Loading</h3>}
+                }) : ""}
 
                 {adventureMovies ? adventureMovies.map((movie) => {
                     return <SwiperSlide>
@@ -67,7 +67,7 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                         
                         <h5>{movie.title}</h5>
                     </SwiperSlide>
-                }) : <h3>Loading</h3>}
+                }) : ""}
             </Swiper>
 
         </>
