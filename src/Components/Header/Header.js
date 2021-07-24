@@ -1,15 +1,16 @@
 import React from 'react';
 import './styles.css';
-let trending =
-	'https://api.themoviedb.org/3/trending/all/week?api_key=be052554f80e371720157b837ddf8d48';
+
+// let trending =
+// 	'https://api.themoviedb.org/3/trending/all/week?api_key=be052554f80e371720157b837ddf8d48';
 //
 const Header = (x) => {
 	return (
 		<myHeader>
 			<body>
 				<header>
-					<h1 id="logo"> CodeFlix</h1>
-					<nav>
+					<h1 id="logo">CodeFlix</h1>
+					<div class="">
 						<ul class="nav-links">
 							<li>
 								<a href="#">Movies</a>
@@ -21,44 +22,33 @@ const Header = (x) => {
 								<a href="#">Lists</a>
 							</li>
 						</ul>
-					</nav>
-					<div class="container">
-						<nav class="navigation">
-							<button class="hamburger-menu">
-								<div class="line line-1"></div>
-								<div class="line line-2"></div>
-								<div class="line line-3"></div>
-							</button>
-							<div class="bg-cover"></div>
-							<ul class="nav-list">
-								<li class="nav-item">
-									<a href="#" class="nav-link">
-										My Profile
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="#" class="nav-link">
-										Top Trending
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="#" class="nav-link">
-										Genres
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="#" class="nav-link">
-										Popularity
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="#" class="nav-link">
-										Settings
-									</a>
-								</li>
-							</ul>
-						</nav>
 					</div>
+					<nav role="navigation">
+						<div id="menuToggle">
+							<input type="checkbox" />
+							<span></span>
+							<span></span>
+							<span></span>
+
+							<ul id="menu">
+								<a href="#">
+									<li>My Profile</li>
+								</a>
+								<a href="#">
+									<li>Top Trending</li>
+								</a>
+								<a href="#">
+									<li>Genres</li>
+								</a>
+								<a href="#">
+									<li>Popularity</li>
+								</a>
+								<a href="#">
+									<li>Settings</li>
+								</a>
+							</ul>
+						</div>
+					</nav>
 				</header>
 			</body>
 		</myHeader>
@@ -66,13 +56,3 @@ const Header = (x) => {
 };
 
 export default Header;
-
-// function sideBar() {
-// 	let x = document
-// 		.querySelector('.hamburger-menu')
-// 		.addEventListener('click', () => {
-// 			document.querySelector('.navigation').classList.toggle('change');
-// 		});
-// 	document.body.appendChild(x);
-// }
-// sideBar();
