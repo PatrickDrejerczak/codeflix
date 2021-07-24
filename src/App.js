@@ -1,6 +1,8 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import HomePage from "./Page/HomePage/HomePage";
+import SinglePage from "./Page/SinglePage/SinglePage";
 const myKey = process.env.REACT_APP_API_KEY;
 
 console.log(myKey);
@@ -21,6 +23,7 @@ const App = () => {
     let moviesList = result.results
     setPopularMovies(moviesList)
   }, []);
+
 
   useEffect(async () => { //get tv list
     let url = "https://api.themoviedb.org/3/tv/popular?api_key=" + `${myKey}` + "&language=en-US&page=1"
@@ -46,8 +49,13 @@ const App = () => {
 
   return (
     <>
-      <HomePage popularMovies={popularMovies} popularTV={popularTV} trending={trending} actionMovies={actionMovies}/>
+    <Switch>
+      <Route path="/" exact component={() => <HomePage popularMovies={popularMovies} popularTV={popularTV} trending={trending} actionMovies={actionMovies}/>} />
+      <Route path="/movie/:id" component={SinglePage} />
+    </Switch>
+      
     </>);
+
 };
 
 export default App;
