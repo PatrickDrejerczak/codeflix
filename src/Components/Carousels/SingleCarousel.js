@@ -16,6 +16,26 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
                 className="container single_carousel"
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                      },
+                    // when window width is >= 640px
+                      // when window width is >= 480px
+                      240: {
+                        slidesPerView: 2,
+                      },
+                      540: {
+                        slidesPerView: 3,
+                      },
+                      600: {
+                        slidesPerView: 4,
+                      },
+                      // when window width is >= 640px
+                      900: {
+                        slidesPerView: 5,
+                      },
+                  }}
             >
                 {trending ? trending.map((show) => {
                     return <SwiperSlide>
