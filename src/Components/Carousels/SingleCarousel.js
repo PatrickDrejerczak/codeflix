@@ -40,10 +40,10 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
             >
                 {trending ? trending.map((show) => {
                     return <SwiperSlide >
-                        <Nav.Link as={Link} to={`movie/${show.id}`} >
+                        <Nav.Link as={Link} to={`movie/${show.id}`} className="main-content">
                             {show.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${show.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
 
-                            {show.media_type == "tv" ? <h5>{show.name}</h5> : <h5>{show.title}</h5>}
+                            {show.media_type === "tv" ? <h5>{show.name}</h5> : <h5>{show.title}</h5>}
                         </Nav.Link>
 
                     </SwiperSlide>
@@ -54,7 +54,6 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                     return <SwiperSlide>
                         <Nav.Link as={Link} to={`movie/${movie.id}`} >
                             {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
-
                             <h5>{movie.title}</h5>
                         </Nav.Link>
 
@@ -66,7 +65,6 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                     return <SwiperSlide>
                         <Nav.Link as={Link} to={`tv/${tv.id}`} >
                             {tv.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${tv.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
-
                             <h5>{tv.name}</h5>
                         </Nav.Link>
 
@@ -77,25 +75,33 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
 
                 {actionMovies ? actionMovies.map((movie) => {
                     return <SwiperSlide>
-                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        <Nav.Link as={Link} to={`movie/${movie.id}`} >
+                            {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                            <h5>{movie.title}</h5>
+                        </Nav.Link>
 
-                        <h5>{movie.title}</h5>
                     </SwiperSlide>
                 }) : ""}
 
                 {comedyMovies ? comedyMovies.map((movie) => {
                     return <SwiperSlide>
-                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        <Nav.Link as={Link} to={`movie/${movie.id}`} >
+                            {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
 
-                        <h5>{movie.title}</h5>
+                            <h5>{movie.title}</h5>
+                        </Nav.Link>
+
                     </SwiperSlide>
                 }) : ""}
 
                 {adventureMovies ? adventureMovies.map((movie) => {
                     return <SwiperSlide>
-                        {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
+                        <Nav.Link as={Link} to={`movie/${movie.id}`} >
+                            {movie.backdrop_path ? <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}></img> : <img src={`https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/40042/preview_40042.jpg`}></img>}
 
-                        <h5>{movie.title}</h5>
+                            <h5>{movie.title}</h5>
+                        </Nav.Link>
+
                     </SwiperSlide>
                 }) : ""}
             </Swiper>
