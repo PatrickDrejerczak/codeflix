@@ -1,0 +1,17 @@
+* {
+  background-color: #141414;
+}
+
+.search-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pic {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

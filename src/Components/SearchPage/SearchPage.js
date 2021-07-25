@@ -1,37 +1,74 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./style.css";
+import Card from "react-bootstrap/Card";
+const myKey = process.env.REACT_APP_API_KEY;
 
 const SearchPage = () => {
   console.log(useParams());
   const { keyword } = useParams();
   console.log(keyword);
-  let [searchData, setSearchData] = useState({});
+  let [searchData, setSearchData] = useState([]);
 
-  useEffect(() => {
-    const getData = async () => {
-      let url;
-      if (keyword) {
-        url = `https://newsapi.org/v2/everything?q=${keyword}&apiKey=a789c89d7c354c64afc320506517b71f`;
-      } else {
-        url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=a789c89d7c354c64afc320506517b71f`;
-      }
+  const getData = async (url) => {
+    const data = await fetch(url);
+    const result = await data.json();
+    return await result;
+  };
 
-      const data = await fetch(url);
-      const result = await data.json();
-      setSearchData(result);
-    };
-    getData();
+  useEffect(async () => {
+    let url;
+    if (keyword) {
+      url = `https://api.themoviedb.org/3/search/movie?api_key=${myKey}&language=en-US&query=${keyword}&page=1&include_adult=false`;
+    } else {
+      url = `
+      https://api.themoviedb.org/3/movie/popular?api_key=${myKey}&language=en-US`;
+    }
+    try {
+      let result = await getData(url);
+      let results = result.results;
+      setSearchData(results);
+    } catch (error) {
+      console.log(error);
+    }
   }, [keyword]);
+
   console.log(searchData);
+
   return (
-    <div>
-      {searchData.articles
-        ? searchData.articles?.map((e) => {
+    <div
+      className="searchLayout"
+      style={{
+        width: "18rem",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
+      {searchData
+        ? searchData.map((e) => {
             return (
-              <div>
-                <h1>{e.title}</h1>
-                <h1>{e.author}</h1>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <Card
+                  style={{
+                    width: "18rem",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Card.Img
+                    variant="top"
+                    src={`https://image.tmdb.org/t/p/original${e.backdrop_path}`}
+                  />
+                </Card>
               </div>
             );
           })
