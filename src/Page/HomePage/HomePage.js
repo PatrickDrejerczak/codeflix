@@ -123,19 +123,25 @@ const HomePage = () => {
         aria-labelledby="example-modal-sizes-title-lg"
         contentClassName="modal-background"
       >
-        <Modal.Body >
+        <Modal.Body>
           <div className="pd">
-          <YoutubeEmbed width="700" height="480" embedId={`${clipID}`} />
-          {movie ? <>
-            {(movie.name) ? <h2>{movie.name}</h2> : <h2>{movie.title}</h2>}
-            <p>{movie.overview}</p>
-          </> : ""}
+            <YoutubeEmbed width="700" height="480" embedId={`${clipID}`} />
+            {movie ? <>
+              {(movie.name) ? <h2>{movie.name}</h2> : <h2>{movie.title}</h2>}
+              <p>{movie.overview}</p>
+            </> : ""}
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Link as={Link} to={`movie/${movie.id}`}>
-            View Detail
-          </Link>
+          {movie ? <>
+            {(movie.name) ? <Link as={Link} to={`tv/${movie.id}`}>
+              <Button variant="danger"> View Detail </Button>
+            </Link> : <Link as={Link} to={`movie/${movie.id}`}>
+              <Button variant="danger"> View Detail </Button>
+            </Link>}
+            <p>{movie.overview}</p>
+          </> : ""}
+
         </Modal.Footer>
       </Modal>
       <Header />
