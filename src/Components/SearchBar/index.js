@@ -15,24 +15,24 @@ import {
 const SearchBox = () => {
   const [searchInput, setSearchInput] = useState("");
   const [query, setQuery] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchData, setSearchData] = useState([]);
 
-  const getData = async (url) => {
-    const data = await fetch(url);
-    const result = await data.json();
-    return await result;
-  };
+  useEffect(() => {
+    const getData = async () => {
+      let url;
+      if (query) {
+        url = `https://newsapi.org/v2/everything?q=${query}&apiKey=a789c89d7c354c64afc320506517b71f`;
+      } else {
+        url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=a789c89d7c354c64afc320506517b71f`;
+      }
 
-  useEffect(async () => {
-    let url;
-    if (query) {
-      url = `https://newsapi.org/v2/everything?q=${query}&apiKey=a789c89d7c354c64afc320506517b71f`;
-    } else {
-      url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=a789c89d7c354c64afc320506517b71f`;
-    }
-    let result = await getData(url);
-    let searchResult = result.results;
-    setSearchResult(searchResult);
+      const data = await fetch(url);
+      const result = await data.json();
+      const searchData = result;
+      setSearchData(searchData);
+      console.log(searchData);
+    };
+    getData();
   }, [query]);
 
   const handleInput = (e) => {
@@ -75,6 +75,7 @@ const SearchBox = () => {
           </Row>
         </Container>
       </Navbar>
+      <h1>{searchData.title}</h1>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const SearchPage = ({ searchResult }) => {
   return (
     <div>
       <h1>SearchResult</h1>
-      {/* <p>{searchResult.title}</p> */}
+      <p>{searchResult}</p>
     </div>
   );
 };
