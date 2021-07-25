@@ -7,51 +7,50 @@ import './styles.css';
 const Header = (x) => {
 	return (
 		<myHeader>
-				<header>
-					<h1 id="logo">CodeFlix</h1>
-					<div className="">
-						<ul className="nav-links">
-							<li>
-								<a href="#">Movies</a>
-							</li>
-							<li>
-								<a href="#">TV Shows</a>
-							</li>
-							<li>
-								<a href="#">Lists</a>
-							</li>
+			<header>
+				<h1 id="logo">CodeFlix</h1>
+				<div className="">
+					<ul className="nav-links">
+						<li>
+							<a href="#">Movies</a>
+						</li>
+						<li>
+							<a href="#">TV Shows</a>
+						</li>
+						<li>
+							<a href="#">Lists</a>
+						</li>
+					</ul>
+				</div>
+				<nav role="navigation">
+					<div id="menuToggle">
+						<input type="checkbox" />
+						<span></span>
+						<span></span>
+						<span></span>
+
+						<ul id="menu">
+							<a href="#">
+								<li id="profile">My Profile</li>
+							</a>
+							<a href="#">
+								<li id="trending">Top Trending</li>
+							</a>
+							<a href="#">
+								<li id="genre">Genres</li>
+							</a>
+							<a href="#">
+								<li id="popularity">Popularity</li>
+							</a>
+							<a href="#">
+								<li id="settings">Settings</li>
+							</a>
 						</ul>
 					</div>
-					<nav role="navigation">
-						<div id="menuToggle">
-							<input type="checkbox" />
-							<span></span>
-							<span></span>
-							<span></span>
-
-							<ul id="menu">
-								<a href="#">
-									<li>My Profile</li>
-								</a>
-								<a href="#">
-									<li>Top Trending</li>
-								</a>
-								<a href="#">
-									<li>Genres</li>
-								</a>
-								<a href="#">
-									<li>Popularity</li>
-								</a>
-								<a href="#">
-									<li>Settings</li>
-								</a>
-							</ul>
-						</div>
-					</nav>
-				</header>
+				</nav>
+			</header>
 		</myHeader>
 	);
 };
-
 
 export default Header;
