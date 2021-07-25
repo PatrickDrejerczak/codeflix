@@ -8,12 +8,16 @@ import {
     FooterLink,
     Heading,
   } from "./FooterStyles";
+import logo from "./logo.png";
+
+import { Navbar } from 'react-bootstrap';
 const Footer = () => {
     return (
         <>
             <Box>
      
       <Container>
+
         <Row>
           <Column>
             <FooterLink href="#">Audio and Subtitles</FooterLink>
@@ -63,6 +67,16 @@ const Footer = () => {
             </FooterLink>
           </Column>
         </Row>
+        <div style={{marginTop: "15px" ,fontSize:"30px", color: "white", display: "flex", justifyContent: "center"}}>
+				<img 
+					src={logo}
+					alt=""
+					width="40"
+					height="40"
+					className="d-inline-block align-top"
+				/>
+				CodeFlix
+			</div>
       </Container>
     </Box>
         </>

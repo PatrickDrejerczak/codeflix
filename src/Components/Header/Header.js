@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 	return (
 		<Navbar className="nav-bar" bg="dark" variant="dark" expand="lg">
-			<Link style={{textDecoration:"none"}} as={Link} to={`/`}><Navbar.Brand>
+			<Link style={{textDecoration:"none"}} as={Link} to={`/`}>
+				<Navbar.Brand>
 				<img 
 					src={logo}
 					alt=""
