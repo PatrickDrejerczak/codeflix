@@ -134,6 +134,7 @@ const HomePage = () => {
         </Modal.Body>
         <Modal.Footer>
           {movie ? <>
+            <h6 style={{position: "absolute", left: "10px"}}>MovieDB Rating: {movie.vote_average}</h6>
             {(movie.name) ? <Link as={Link} to={`tv/${movie.id}`}>
               <Button variant="danger"> View Detail </Button>
             </Link> : <Link as={Link} to={`movie/${movie.id}`}>

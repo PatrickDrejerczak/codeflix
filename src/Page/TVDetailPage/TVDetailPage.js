@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import { Container, Jumbotron, Button, Image } from 'react-bootstrap'
-
+import './TVDetailPage.css'
 const API_KEY = process.env.REACT_APP_API_KEY
 
 const TVDetailPage = () => {
@@ -24,25 +24,24 @@ const TVDetailPage = () => {
     }, [id])
 
     return (
-        <div>
+        <div className="tv-page">
             <Header />
-            <Container>
-                <Jumbotron className='bg-white'>
-                    <h1>{tvDetail.name}</h1>
-                    <hr className='solid'></hr>
+            <Container className='tv-page'>
+                <Jumbotron>
+
                     <Image src={"https://image.tmdb.org/t/p/w500/" + tvDetail.poster_path} />
                     <h4>{tvDetail.tagline}</h4>
                     <hr className='solid'></hr>
                     <p>Genres: {tvDetail.genres?.map(g => {
                         return (
-                            <Button className='ml-2'>{g.name}</Button>
+                            <Button variant='success' className='ml-2'>{g.name}</Button>
                         )
                     })}
                     </p>
 
                     <strong><p>{tvDetail.overview}</p></strong>
                     <p>Episode number: {tvDetail.episode_number}</p>
-                    <a href={tvDetail.homepage}>HomePage</a>
+                    <Button href={tvDetail.homepage}>To TV Show's Page</Button>
                     <hr className='solid'></hr>
                 </Jumbotron>
             </Container>

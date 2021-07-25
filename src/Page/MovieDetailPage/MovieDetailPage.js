@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import ModalBox from '../../Components/ModalBox/ModalBox'
-
+import './MovieDetailPage.css'
 import { Container, Jumbotron, Button, Image } from 'react-bootstrap'
 
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -40,27 +40,25 @@ const MovieDetailPage = () => {
 
 
     return (
-        <div>
+        <div className="movie-page">
             <Header />
-            <Container>
-                <Jumbotron className='bg-white'>
-                    <h1>{movieDetail.title}</h1>
-                    <hr className='solid'></hr>
-                    <Image src={"https://image.tmdb.org/t/p/w500/" + movieDetail.poster_path} />
+            <Container className="movie-page">
+                <Jumbotron >
+                    <Image height={"500px"} src={"https://image.tmdb.org/t/p/w500/" + movieDetail.poster_path} />
                     <ModalBox
                         modalOpen={modalOpen}
                         setModalOpen={setModalOpen}
                         movieTrailer={movieTrailer}
                     />
 
-                    <Button onClick={() => fetchYoutubeId(movieDetail.id)}>
+                    <Button variant="danger" style={{margin: "20px 0 20px 0"}} onClick={() => fetchYoutubeId(movieDetail.id)}>
                         Play Trailer
                     </Button>
                     <h4>{movieDetail.tagline}</h4>
                     <hr className='solid'></hr>
                     <p>Genres: {movieDetail.genres?.map(g => {
                         return (
-                            <Button className='ml-2'>{g.name}</Button>
+                            <Button variant={"success"} className='ml-2'>{g.name}</Button>
                         )
                     })}
                     </p>
@@ -74,7 +72,7 @@ const MovieDetailPage = () => {
 
                     <strong><p>{movieDetail.overview}</p></strong>
                     <p>Runtime: {movieDetail.runtime} minutes</p>
-                    <a href={movieDetail.homepage}>HomePage</a>
+                    <Button href={movieDetail.homepage}>To Movie Page</Button>
                     <hr className='solid'></hr>
                 </Jumbotron>
             </Container>
