@@ -107,3 +107,4 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default SingleCarousel
+
