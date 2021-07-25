@@ -74,6 +74,9 @@
     .single_carousel {
       margin-bottom: 20px;
       height: 25vh;
-      overflow: visible !important;
       cursor: pointer;
+    }
+    .single_carousel:hover {
+      overflow: visible !important;
+
     }
