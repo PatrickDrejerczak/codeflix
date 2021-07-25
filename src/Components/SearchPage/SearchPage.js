@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Card, Button, Col, Row } from "react-bootstrap";
 import Color from "color";
+import Footer from "../Footer/Footer";
+import HeaderSearchPage from "../HeaderSearchPage/HeaderSearchPage";
+import "./style.css";
 const myKey = process.env.REACT_APP_API_KEY;
 
 const SearchPage = () => {
@@ -38,6 +41,7 @@ const SearchPage = () => {
 
   return (
     <div>
+      <HeaderSearchPage />
       <Row>
         {searchData
           ? searchData.map((e) => {
@@ -48,17 +52,19 @@ const SearchPage = () => {
                     <Card style={{ width: "18rem" }}>
                       <Card.Img
                         variant="top"
-                        src={`https://image.tmdb.org/t/p/original${e.backdrop_path}`}
+                        src={`https://image.tmdb.org/t/p/original${e.poster_path}`}
+                        alt="./notfound.jpeg"
                       />
-                      <Card.Body>
+                      <Card.Body className="mainCard">
                         <Card.Title>{e.title}</Card.Title>
-                        <Card.Subtitle className="my-3 text-muted">
+                        <br />
+                        <Card.Subtitle style={{ color: "grey" }}>
                           User Rating: {e.vote_average}
                         </Card.Subtitle>
-                        <Card.Text style={{ color: "black" }}>
+                        <br />
+                        <Card.Text style={{ color: "white" }}>
                           {e.overview}
                         </Card.Text>
-                        <Card.Link href="#">View more</Card.Link>
                       </Card.Body>
                     </Card>
                   </Col>
@@ -67,6 +73,7 @@ const SearchPage = () => {
             })
           : ""}
       </Row>
+      <Footer />
     </div>
   );
 };
