@@ -6,7 +6,7 @@ import SingleCarousel from './SingleCarousel';
 
 const Carousels = ({ popularMovies, popularTV, trending, actionMovies, adventureMovies, comedyMovies, setModalShow,setMovie}) => {
     return (
-        <>
+        <div className="background-black">
             <h2>Trending Now</h2>
             <SingleCarousel key={"trending"} trending={trending} setModalShow={setModalShow}
         setMovie={setMovie}/>
@@ -32,7 +32,7 @@ const Carousels = ({ popularMovies, popularTV, trending, actionMovies, adventure
             <h2>Comedy</h2>
             <SingleCarousel key={"comedy"} comedyMovies={comedyMovies} setModalShow={setModalShow} setMovie={setMovie}/>
             <br></br>
-        </>
+        </div>
     )
 }
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);

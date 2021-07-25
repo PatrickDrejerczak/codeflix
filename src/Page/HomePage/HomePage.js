@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 import Carousels from "../../Components/Carousels/Carousels";
@@ -121,14 +121,16 @@ const HomePage = () => {
         show={modalShow}
         onHide={() => setModalShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
+        contentClassName="modal-background"
       >
-        <Modal.Body>
+        <Modal.Body >
+          <div className="pd">
           <YoutubeEmbed width="700" height="480" embedId={`${clipID}`} />
           {movie ? <>
             {(movie.name) ? <h2>{movie.name}</h2> : <h2>{movie.title}</h2>}
             <p>{movie.overview}</p>
           </> : ""}
-
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Link as={Link} to={`movie/${movie.id}`}>

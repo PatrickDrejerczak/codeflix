@@ -16,8 +16,8 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
         <>
             <Swiper
                 spaceBetween={5}
-                slidesPerGroup={5}
-                slidesPerView={5}
+                slidesPerGroup={6}
+                slidesPerView={6}
                 navigation
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
@@ -41,8 +41,8 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
 
                     // when window width is >= 640px
                     900: {
-                        slidesPerView: 5,
-                        slidesPerGroup: 5,
+                        slidesPerView: 6,
+                        slidesPerGroup: 6,
                     },
                 }}
             >
