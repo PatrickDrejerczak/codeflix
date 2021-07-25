@@ -14,34 +14,10 @@ import {
 
 const SearchBox = () => {
   const [searchInput, setSearchInput] = useState("");
-  const [query, setQuery] = useState("");
-  const [searchData, setSearchData] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      let url;
-      if (query) {
-        url = `https://newsapi.org/v2/everything?q=${query}&apiKey=a789c89d7c354c64afc320506517b71f`;
-      } else {
-        url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=a789c89d7c354c64afc320506517b71f`;
-      }
-
-      const data = await fetch(url);
-      const result = await data.json();
-      const searchData = result;
-      setSearchData(searchData);
-      console.log(searchData);
-    };
-    getData();
-  }, [query]);
 
   const handleInput = (e) => {
     e.preventDefault();
     setSearchInput(e.target.value);
-  };
-
-  const confirmSearch = () => {
-    setQuery(searchInput);
   };
 
   return (
@@ -61,12 +37,8 @@ const SearchBox = () => {
                   value={searchInput}
                   onChange={handleInput}
                 />
-                <Link to="/search/:keyword">
-                  <Button
-                    onClick={confirmSearch}
-                    variant="outline-success"
-                    id="button-addon1"
-                  >
+                <Link to={`/search/${searchInput}`}>
+                  <Button variant="outline-success" id="button-addon1">
                     Search
                   </Button>
                 </Link>
@@ -75,7 +47,6 @@ const SearchBox = () => {
           </Row>
         </Container>
       </Navbar>
-      <h1>{searchData.title}</h1>
     </div>
   );
 };
