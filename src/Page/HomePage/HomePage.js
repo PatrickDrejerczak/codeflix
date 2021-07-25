@@ -145,7 +145,6 @@ const HomePage = () => {
         </Modal.Footer>
       </Modal>
       <Header />
-      <SearchBar />
       <Carousels
         popularMovies={popularMovies}
         popularTV={popularTV}
