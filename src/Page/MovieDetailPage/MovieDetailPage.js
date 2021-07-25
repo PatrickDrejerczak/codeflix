@@ -43,7 +43,7 @@ const MovieDetailPage = () => {
         <div className="movie-page">
             <Header />
             <Container className="movie-page">
-                <Jumbotron >
+                <Jumbotron className="bg-dark">
                     <Image height={"500px"} src={"https://image.tmdb.org/t/p/w500/" + movieDetail.poster_path} />
                     <ModalBox
                         modalOpen={modalOpen}
@@ -51,7 +51,7 @@ const MovieDetailPage = () => {
                         movieTrailer={movieTrailer}
                     />
 
-                    <Button variant="danger" style={{margin: "20px 0 20px 0"}} onClick={() => fetchYoutubeId(movieDetail.id)}>
+                    <Button variant="danger" style={{ margin: "20px 0 20px 0" }} onClick={() => fetchYoutubeId(movieDetail.id)}>
                         Play Trailer
                     </Button>
                     <h4>{movieDetail.tagline}</h4>
