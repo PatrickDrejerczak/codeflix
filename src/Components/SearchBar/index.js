@@ -21,33 +21,21 @@ const SearchBox = () => {
 	};
 
 	return (
-		<div>
-			<Navbar bg="light" variant="light">
-				<Container>
-					<Row className="search_box justify-content-between">
-						<Col xs={12} md={8} lg={6}>
-							<Navbar.Brand>Codeflix</Navbar.Brand>
-						</Col>
-						<Col xs={8} md={6} lg={6}>
-							<InputGroup className="mb-3">
-								<FormControl
-									aria-label="Example text with button addon"
-									aria-describedby="basic-addon1"
-									size="sm"
-									value={searchInput}
-									onChange={handleInput}
-								/>
-								<Link to={`/search/${searchInput}`}>
-									<Button variant="outline-success" id="button-addon1">
-										Search
-									</Button>
-								</Link>
-							</InputGroup>
-						</Col>
-					</Row>
-				</Container>
-			</Navbar>
-		</div>
+		<InputGroup style={{width: "20vw"}}>
+			<FormControl
+				aria-label="Example text with button addon"
+				aria-describedby="basic-addon1"
+				size="sm"
+				value={searchInput}
+				onChange={handleInput}
+				width="40px"
+			/>
+			<Link to={`/search/${searchInput}`}>
+				<Button variant="outline-success" id="button-addon1">
+					Search
+				</Button>
+			</Link>
+		</InputGroup>
 	);
 };
 
