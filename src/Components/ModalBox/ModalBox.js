@@ -14,7 +14,7 @@ const ModalBox = (props) => {
                 aria-labelledby="example-modal-sizes-title-xl"
             >
                 <Modal.Body>
-                    <YoutubeEmbed embedId={props.movieTrailer.key} />
+                    <YoutubeEmbed width={"853"} height={"480"} embedId={props.movieTrailer.key} />
 
                 </Modal.Body>
             </Modal>

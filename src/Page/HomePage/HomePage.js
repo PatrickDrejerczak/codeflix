@@ -6,6 +6,8 @@ import Carousels from "../../Components/Carousels/Carousels";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import SearchBar from "../../Components/SearchBar/index.js";
+import YoutubeEmbed from "../../Components/YoutubeEmbed/YoutubeEmbed";
+import './style.css'
 const myKey = process.env.REACT_APP_API_KEY;
 
 const HomePage = () => {
@@ -22,6 +24,7 @@ const HomePage = () => {
   const [comedyMovies, setComedyMovies] = useState([]);
   const [modalShow, setModalShow] = useState(false);
   const [movie, setMovie] = useState({});
+  const [clipID, setClipID] = useState("");
   useEffect(async () => {
     //get popular movies list
     let url =
@@ -88,6 +91,29 @@ const HomePage = () => {
     setComedyMovies(comedyList);
   }, []);
 
+  useEffect(async () => {
+    //get comedy movies
+    let url;
+    if (movie.name) {
+      url = `https://api.themoviedb.org/3/tv/${movie.id}/videos?api_key=${myKey}&language=en-US`
+    }
+    else {
+      url = `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${myKey}&language=en-US`
+    }
+    try {
+      let result = await getData(url);
+      let results = result.results;
+      if (results != undefined) {
+        let id = results[0].key
+        setClipID(id);
+      }
+    }
+    catch (error) {
+      console.log(error)
+    }
+
+  }, [movie]);
+
   return (
     <>
       <Modal
@@ -96,12 +122,8 @@ const HomePage = () => {
         onHide={() => setModalShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-            Large Modal
-          </Modal.Title>
-        </Modal.Header>
         <Modal.Body>
+          <YoutubeEmbed width="700" height="480" embedId={`${clipID}`} />
           {movie ? <>
             {(movie.name) ? <h2>{movie.name}</h2> : <h2>{movie.title}</h2>}
             <p>{movie.overview}</p>
