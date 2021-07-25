@@ -139,7 +139,6 @@ const HomePage = () => {
             </Link> : <Link as={Link} to={`movie/${movie.id}`}>
               <Button variant="danger"> View Detail </Button>
             </Link>}
-            <p>{movie.overview}</p>
           </> : ""}
 
         </Modal.Footer>
