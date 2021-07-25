@@ -1,55 +1,35 @@
 import React from 'react';
 import './styles.css';
-
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 // let trending =
 // 	'https://api.themoviedb.org/3/trending/all/week?api_key=be052554f80e371720157b837ddf8d48';
-//
-const Header = (x) => {
+import logo from "./logo.png";
+const Header = () => {
 	return (
-		<myHeader>
-			<header>
-				<h1 id="logo">CodeFlix</h1>
-				<div className="">
-					<ul className="nav-links">
-						<li>
-							<a href="#">Movies</a>
-						</li>
-						<li>
-							<a href="#">TV Shows</a>
-						</li>
-						<li>
-							<a href="#">Lists</a>
-						</li>
-					</ul>
-				</div>
-				<nav role="navigation">
-					<div id="menuToggle">
-						<input type="checkbox" />
-						<span></span>
-						<span></span>
-						<span></span>
+		<Navbar className="nav-bar" bg="dark" variant="dark" expand="lg">
+			<Navbar.Brand href="#home">
+				<img 
+					src={logo}
+					alt=""
+					width="30"
+					height="30"
+					className="d-inline-block align-top"
+				/>
+				CodeFlix
+			</Navbar.Brand>
+			<Navbar.Toggle aria-controls="basic-navbar-nav" />
+			<Navbar.Collapse id="basic-navbar-nav">
+				<Nav className="me-auto">
+					<Nav.Link href="#trending">Trending Now</Nav.Link>
+					<Nav.Link href="#movie">Movie</Nav.Link>
+					<Nav.Link href="#tv">TV Shows</Nav.Link>
+					<Nav.Link href="#action">Action</Nav.Link>
+					<Nav.Link href="#adventure">Adventure</Nav.Link>
+					<Nav.Link href="#comedy">Comedy</Nav.Link>
 
-						<ul id="menu">
-							<a href="#">
-								<li id="profile">My Profile</li>
-							</a>
-							<a href="#">
-								<li id="trending">Top Trending</li>
-							</a>
-							<a href="#">
-								<li id="genre">Genres</li>
-							</a>
-							<a href="#">
-								<li id="popularity">Popularity</li>
-							</a>
-							<a href="#">
-								<li id="settings">Settings</li>
-							</a>
-						</ul>
-					</div>
-				</nav>
-			</header>
-		</myHeader>
+				</Nav>
+			</Navbar.Collapse>
+		</Navbar>
 	);
 };
 

@@ -11,25 +11,25 @@ const Carousels = ({ popularMovies, popularTV, trending, actionMovies, adventure
             <SingleCarousel key={"trending"} trending={trending} setModalShow={setModalShow}
         setMovie={setMovie}/>
             <br></br>
-            <h2>Movie</h2>
+            <h2 id={"movie"}>Movie</h2>
             <SingleCarousel key={"movie"} popularMovies={popularMovies} setModalShow={setModalShow} setMovie={setMovie}/>
             <br></br>
 
 
-            <h2>TV Shows</h2>
+            <h2 id={"tv"}>TV Shows</h2>
             <SingleCarousel key={"tv"} popularTV={popularTV} setModalShow={setModalShow} setMovie={setMovie}/>
             <br></br>
 
 
-            <h2>Action</h2>
+            <h2 id={"action"}>Action</h2>
             <SingleCarousel key={"action"} actionMovies={actionMovies} setModalShow={setModalShow} setMovie={setMovie}/>
             <br></br>
 
-            <h2>Adventure</h2>
+            <h2 id={"adventure"}>Adventure</h2>
             <SingleCarousel key={"adventure"} adventureMovies={adventureMovies} setModalShow={setModalShow} setMovie={setMovie}/>
             <br></br>
 
-            <h2>Comedy</h2>
+            <h2 id={"comedy"}>Comedy</h2>
             <SingleCarousel key={"comedy"} comedyMovies={comedyMovies} setModalShow={setModalShow} setMovie={setMovie}/>
             <br></br>
         </div>
