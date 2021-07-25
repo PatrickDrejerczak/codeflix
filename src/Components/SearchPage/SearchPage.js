@@ -53,7 +53,7 @@ const SearchPage = () => {
                       <Card.Body>
                         <Card.Title>{e.title}</Card.Title>
                         <Card.Subtitle className="my-3 text-muted">
-                          Genre: {e.genre}
+                          User Rating: {e.vote_average}
                         </Card.Subtitle>
                         <Card.Text style={{ color: "black" }}>
                           {e.overview}
