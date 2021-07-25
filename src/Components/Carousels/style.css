@@ -37,16 +37,12 @@
       align-items: center;
     }
 
-    #main-content{
-      text-align: center;
+    .image {
+      width: 100% !important;
+      height: 100% !important;
     }
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
-
-    h5 {
+    h6 {
       font-family: 'Otomanopee One', sans-serif;
       color: white;
       position: absolute;
@@ -68,4 +64,5 @@
 
     .single_carousel {
       margin-bottom: 20px;
+      height: 25vh;
     }

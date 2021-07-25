@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 import Carousels from "../../Components/Carousels/Carousels";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
@@ -17,7 +20,8 @@ const HomePage = () => {
   const [actionMovies, setActionMovies] = useState([]);
   const [adventureMovies, setAdventureMovies] = useState([]);
   const [comedyMovies, setComedyMovies] = useState([]);
-
+  const [modalShow, setModalShow] = useState(false);
+  const [movie, setMovie] = useState({})
   useEffect(async () => {
     //get popular movies list
     let url =
@@ -86,6 +90,30 @@ const HomePage = () => {
 
   return (
     <>
+      <Modal
+        size="lg"
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            Large Modal
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {movie ? <>
+            {(movie.name) ? <h2>{movie.name}</h2> : <h2>{movie.title}</h2>}
+            <p>{movie.overview}</p>
+          </> : ""}
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Link as={Link} to={`movie/${movie.id}`}>
+            View Detail
+          </Link>
+        </Modal.Footer>
+      </Modal>
       <Header />
       <SearchBar />
       <Carousels
@@ -95,8 +123,11 @@ const HomePage = () => {
         actionMovies={actionMovies}
         adventureMovies={adventureMovies}
         comedyMovies={comedyMovies}
+        setModalShow={setModalShow}
+        setMovie={setMovie}
       />
       <Footer />
+
     </>
   );
 };
