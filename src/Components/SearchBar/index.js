@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import {
   Navbar,
@@ -14,21 +15,24 @@ import {
 const SearchBox = () => {
   const [searchInput, setSearchInput] = useState("");
   const [query, setQuery] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
 
-  useEffect(() => {
-    const getData = async () => {
-      let url;
-      if (query) {
-        url = `https://newsapi.org/v2/everything?q=${query}&apiKey=a789c89d7c354c64afc320506517b71f`;
-      } else {
-        url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=a789c89d7c354c64afc320506517b71f`;
-      }
+  const getData = async (url) => {
+    const data = await fetch(url);
+    const result = await data.json();
+    return await result;
+  };
 
-      const data = await fetch(url);
-      const result = await data.json();
-      console.log(result);
-    };
-    getData();
+  useEffect(async () => {
+    let url;
+    if (query) {
+      url = `https://newsapi.org/v2/everything?q=${query}&apiKey=a789c89d7c354c64afc320506517b71f`;
+    } else {
+      url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=a789c89d7c354c64afc320506517b71f`;
+    }
+    let result = await getData(url);
+    let searchResult = result.results;
+    setSearchResult(searchResult);
   }, [query]);
 
   const handleInput = (e) => {
@@ -57,13 +61,15 @@ const SearchBox = () => {
                   value={searchInput}
                   onChange={handleInput}
                 />
-                <Button
-                  onClick={confirmSearch}
-                  variant="outline-success"
-                  id="button-addon1"
-                >
-                  Search
-                </Button>
+                <Link to="/search/:keyword">
+                  <Button
+                    onClick={confirmSearch}
+                    variant="outline-success"
+                    id="button-addon1"
+                  >
+                    Search
+                  </Button>
+                </Link>
               </InputGroup>
             </Col>
           </Row>

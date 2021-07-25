@@ -20,7 +20,7 @@ const HomePage = () => {
   const [adventureMovies, setAdventureMovies] = useState([]);
   const [comedyMovies, setComedyMovies] = useState([]);
   const [modalShow, setModalShow] = useState(false);
-  const [movie, setMovie] = useState({})
+  const [movie, setMovie] = useState({});
   useEffect(async () => {
     //get popular movies list
     let url =
@@ -89,7 +89,7 @@ const HomePage = () => {
 
   return (
     <>
-    <Modal
+      <Modal
         size="lg"
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -101,10 +101,14 @@ const HomePage = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {movie ? <>
-            {(movie.name) ? <h2>{movie.name}</h2> : <h2>{movie.title}</h2>}
-            <p>{movie.overview}</p>
-          </> : ""}
+          {movie ? (
+            <>
+              {movie.name ? <h2>{movie.name}</h2> : <h2>{movie.title}</h2>}
+              <p>{movie.overview}</p>
+            </>
+          ) : (
+            ""
+          )}
         </Modal.Body>
       </Modal>
       <Header />
@@ -120,7 +124,6 @@ const HomePage = () => {
         setMovie={setMovie}
       />
       <Footer />
-      
     </>
   );
 };
