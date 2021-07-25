@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./style.css";
-import Card from "react-bootstrap/Card";
+import { Card, Button, Col, Row } from "react-bootstrap";
+import Color from "color";
 const myKey = process.env.REACT_APP_API_KEY;
 
 const SearchPage = () => {
@@ -37,42 +37,36 @@ const SearchPage = () => {
   console.log(searchData);
 
   return (
-    <div
-      className="searchLayout"
-      style={{
-        width: "18rem",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      {searchData
-        ? searchData.map((e) => {
-            return (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <Card
-                  style={{
-                    width: "18rem",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <Card.Img
-                    variant="top"
-                    src={`https://image.tmdb.org/t/p/original${e.backdrop_path}`}
-                  />
-                </Card>
-              </div>
-            );
-          })
-        : ""}
+    <div>
+      <Row>
+        {searchData
+          ? searchData.map((e) => {
+              console.log({ e });
+              return (
+                <div>
+                  <Col>
+                    <Card style={{ width: "18rem" }}>
+                      <Card.Img
+                        variant="top"
+                        src={`https://image.tmdb.org/t/p/original${e.backdrop_path}`}
+                      />
+                      <Card.Body>
+                        <Card.Title>{e.title}</Card.Title>
+                        <Card.Subtitle className="my-3 text-muted">
+                          Genre: {e.genre}
+                        </Card.Subtitle>
+                        <Card.Text style={{ color: "black" }}>
+                          {e.overview}
+                        </Card.Text>
+                        <Card.Link href="#">View more</Card.Link>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                </div>
+              );
+            })
+          : ""}
+      </Row>
     </div>
   );
 };
