@@ -19,7 +19,6 @@ const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adve
                 slidesPerGroup={5}
                 slidesPerView={5}
                 navigation
-                scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
                 className="single_carousel"
