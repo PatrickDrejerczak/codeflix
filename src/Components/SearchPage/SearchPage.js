@@ -23,15 +23,19 @@ const SearchPage = () => {
     };
     getData();
   }, [keyword]);
-
+  console.log(searchData);
   return (
     <div>
-      <h1>
-        {" "}
-        {searchData !== undefined &&
-          searchData.articles !== undefined &&
-          searchData.articles[0].title}
-      </h1>
+      {searchData.articles
+        ? searchData.articles?.map((e) => {
+            return (
+              <div>
+                <h1>{e.title}</h1>
+                <h1>{e.author}</h1>
+              </div>
+            );
+          })
+        : ""}
     </div>
   );
 };
