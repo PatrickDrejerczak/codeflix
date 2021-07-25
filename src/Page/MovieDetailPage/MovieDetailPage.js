@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
+import ModalBox from '../../Components/ModalBox/ModalBox'
+
 import { Container, Jumbotron, Button, Image } from 'react-bootstrap'
 
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -10,18 +12,32 @@ const API_KEY = process.env.REACT_APP_API_KEY
 const MovieDetailPage = () => {
     const { id } = useParams()
     const [movieDetail, setMovieDetail] = useState({})
+    const [movieTrailer, setMovieTrailer] = useState('');
+    console.log({ movieTrailer })
+    const [modalOpen, setModalOpen] = useState(false)
 
     useEffect(() => {
 
         const fetchMovieDetail = async () => {
             const resp = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
             const json = await resp.json()
-            console.log({ json })
+            console.log({ haha: json })
             setMovieDetail(json)
         }
-
         fetchMovieDetail()
     }, [id])
+
+    const fetchYoutubeId = async () => {
+        const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`;
+        const resp = await fetch(url);
+        const json = await resp.json();
+        console.log({ hihi: json });
+        if (json.results.length > 0) {
+            setMovieTrailer(json.results[0]);
+            setModalOpen(!modalOpen)
+        }
+    };
+
 
     return (
         <div>
@@ -31,6 +47,15 @@ const MovieDetailPage = () => {
                     <h1>{movieDetail.title}</h1>
                     <hr className='solid'></hr>
                     <Image src={"https://image.tmdb.org/t/p/w500/" + movieDetail.poster_path} />
+                    <ModalBox
+                        modalOpen={modalOpen}
+                        setModalOpen={setModalOpen}
+                        movieTrailer={movieTrailer}
+                    />
+
+                    <Button onClick={() => fetchYoutubeId(movieDetail.id)}>
+                        Play Trailer
+                    </Button>
                     <h4>{movieDetail.tagline}</h4>
                     <hr className='solid'></hr>
                     <p>Genres: {movieDetail.genres?.map(g => {
