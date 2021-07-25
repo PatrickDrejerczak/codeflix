@@ -21,17 +21,17 @@ const SearchBox = () => {
 	};
 
 	return (
-		<InputGroup style={{width: "20vw"}}>
+		<InputGroup style={{ width: "20vw" }}>
 			<FormControl
-				aria-label="Example text with button addon"
-				aria-describedby="basic-addon1"
-				size="sm"
+				type="text"
+				className="mr-sm-2"
+				placeholder="What are you looking for..."
 				value={searchInput}
 				onChange={handleInput}
 				width="40px"
 			/>
 			<Link to={`/search/${searchInput}`}>
-				<Button variant="outline-success" id="button-addon1">
+				<Button variant="danger" id="button-addon1">
 					Search
 				</Button>
 			</Link>

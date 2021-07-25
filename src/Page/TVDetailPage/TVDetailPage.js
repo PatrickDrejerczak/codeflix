@@ -27,9 +27,9 @@ const TVDetailPage = () => {
         <div className="tv-page">
             <Header />
             <Container className='tv-page'>
-                <Jumbotron>
+                <Jumbotron className="bg-dark">
 
-                    <Image src={"https://image.tmdb.org/t/p/w500/" + tvDetail.poster_path} />
+                    <Image src={"https://image.tmdb.org/t/p/w500/" + tvDetail.poster_path} style={{ margin: "20px 0 20px 0" }} />
                     <h4>{tvDetail.tagline}</h4>
                     <hr className='solid'></hr>
                     <p>Genres: {tvDetail.genres?.map(g => {
