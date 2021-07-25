@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Nav } from 'react-bootstrap'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import image from './notfound.jpeg'
-import './style.css'
+import './SingleCarousel.css'
 const SingleCarousel = ({ popularMovies, popularTV, trending, actionMovies, adventureMovies, comedyMovies, setModalShow, setMovie }) => {
     const handleSlideClicked = (object) => {
         console.log(object)

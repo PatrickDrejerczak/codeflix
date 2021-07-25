@@ -4,10 +4,11 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 // let trending =
 // 	'https://api.themoviedb.org/3/trending/all/week?api_key=be052554f80e371720157b837ddf8d48';
 import logo from "./logo.png";
+import { Link } from 'react-router-dom';
 const Header = () => {
 	return (
 		<Navbar className="nav-bar" bg="dark" variant="dark" expand="lg">
-			<Navbar.Brand href="#home">
+			<Link style={{textDecoration:"none"}} as={Link} to={`/`}><Navbar.Brand>
 				<img 
 					src={logo}
 					alt=""
@@ -17,6 +18,7 @@ const Header = () => {
 				/>
 				CodeFlix
 			</Navbar.Brand>
+			</Link>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="me-auto">

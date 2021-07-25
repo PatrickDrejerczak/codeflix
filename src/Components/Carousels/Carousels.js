@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './SingleCarousel.css'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import SingleCarousel from './SingleCarousel';
