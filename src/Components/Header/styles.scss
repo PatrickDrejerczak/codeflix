@@ -155,11 +155,13 @@ header {
 	border-radius: 10px;
 
 	z-index: 50;
+	opacity: 0;
 }
 
 #menu li {
 	padding: 10px 0;
 	font-size: 22px;
+	// opacity: 0;
 }
 #menu li:hover {
 	color: white;
@@ -167,4 +169,5 @@ header {
 
 #menuToggle input:checked ~ ul {
 	transform: none;
+	opacity: 100;
 }

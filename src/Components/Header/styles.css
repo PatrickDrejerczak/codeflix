@@ -166,6 +166,7 @@ header .nav-link {
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   border-radius: 10px;
   z-index: 50;
+  opacity: 0;
 }
 
 #menu li {
@@ -180,5 +181,6 @@ header .nav-link {
 #menuToggle input:checked ~ ul {
   -webkit-transform: none;
           transform: none;
+  opacity: 100;
 }
 /*# sourceMappingURL=styles.css.map */
