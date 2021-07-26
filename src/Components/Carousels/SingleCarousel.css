@@ -20,8 +20,8 @@
 	font-size: 18px;
 	z-index: 1;
 	background: #fff;
-	border-radius: 15px;
-	border: 1px solid white;
+	border-radius: 10px;
+	border: 0.1px inset white;
 	flex-direction: column;
 	/* Center slide text vertically */
 	display: -webkit-box;
@@ -46,7 +46,7 @@
 }
 
 .image {
-	border-radius: 15px;
+	border-radius: 10px;
 	width: 100% !important;
 	height: 100% !important;
 }
