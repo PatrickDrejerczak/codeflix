@@ -42,20 +42,20 @@ const SearchPage = () => {
   return (
     <div>
       <HeaderSearchPage />
-      <Row>
+      <Row className="search-page">
         {searchData
           ? searchData.map((e) => {
               console.log({ e });
               return (
-                <div>
-                  <Col>
+                <div >
+                  <Col >
                     <Card style={{ width: "18rem" }}>
                       <Card.Img
                         variant="top"
                         src={`https://image.tmdb.org/t/p/original${e.poster_path}`}
                         alt="./notfound.jpeg"
                       />
-                      <Card.Body className="mainCard">
+                      <Card.Body className="mainCard search-page" >
                         <Card.Title>{e.title}</Card.Title>
                         <br />
                         <Card.Subtitle style={{ color: "grey" }}>
