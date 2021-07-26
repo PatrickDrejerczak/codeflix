@@ -175,7 +175,7 @@ const HomePage = () => {
         </Modal.Footer>
       </Modal>
       <Header />
-      <Intro movie={randomMovie}/>
+      <Intro movie={randomMovie} setMovie={setMovie} setModalShow={setModalShow}/>
       <Carousels
         popularMovies={popularMovies}
         popularTV={popularTV}
