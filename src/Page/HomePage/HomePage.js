@@ -100,11 +100,18 @@ const HomePage = () => {
       url = `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${myKey}&language=en-US`;
     }
     try {
-      let results = getData(url);
-      if (results !== undefined) {
-        let id = results[0].key;
-        setClipID(id);
+      async function fetchData() {
+        let results = await getData(url);
+        console.log(results)
+  
+        if (results !== undefined) {
+          let id = results[0].key;
+          console.log(id)
+          setClipID(id);
+        }
       }
+      fetchData();
+     
     } catch (error) {
       console.log(error);
     }
