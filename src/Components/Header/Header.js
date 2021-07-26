@@ -7,10 +7,27 @@ import SearchBar from "../../Components/SearchBar/index.js";
 // let trending =
 // 	'https://api.themoviedb.org/3/trending/all/week?api_key=be052554f80e371720157b837ddf8d48';
 import logo from "./logo.png";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Header = () => {
+  const [show, handleShow] = useState(false);
+
+    useEffect(()=>{
+        window.addEventListener("scroll", () =>{
+            if(window.scrollY > 50){
+                handleShow(true);
+            }else{
+                handleShow(false);
+            }
+            
+        });
+        return () => {
+            window.removeEventListener("scroll",()=>{})
+        }
+    }, [])
   return (
-    <Navbar className="nav-bar" variant="dark" expand="lg">
+    <Navbar className={`nav ${show && "nav__black"}`} variant="dark" expand="lg">
       <Link style={{ textDecoration: "none" }} as={Link} to={`/`}>
         <Navbar.Brand>
           <img
@@ -32,9 +49,8 @@ const Header = () => {
           <Nav.Link href="#action">Action</Nav.Link>
           <Nav.Link href="#adventure">Adventure</Nav.Link>
           <Nav.Link href="#comedy">Comedy</Nav.Link>
-          <Nav.Link href="/favorite">favorite 1</Nav.Link>
           <Nav.Link as={Link} to={"/favorite"}>
-            favorite 2
+            Favorite 
           </Nav.Link>
         </Nav>
         <SearchBar />

@@ -23,7 +23,7 @@ const SingleCarousel = ({
   return (
     <>
       <Swiper
-        spaceBetween={5}
+        spaceBetween={2}
         slidesPerGroup={6}
         slidesPerView={6}
         navigation
@@ -45,7 +45,10 @@ const SingleCarousel = ({
             slidesPerView: 3,
             slidesPerGroup: 3,
           },
-
+          780: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+          },
           // when window width is >= 640px
           900: {
             slidesPerView: 6,

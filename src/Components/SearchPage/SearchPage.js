@@ -8,9 +8,7 @@ import "./style.css";
 const myKey = process.env.REACT_APP_API_KEY;
 
 const SearchPage = () => {
-  console.log(useParams());
   const { keyword } = useParams();
-  console.log(keyword);
   let [searchData, setSearchData] = useState([]);
 
   useEffect(() => {
@@ -26,7 +24,6 @@ const SearchPage = () => {
         let result = await fetch(url);
         let data = await result.json();
         let results = data.results
-        console.log(results)
         setSearchData(results);
       };
       getData();
@@ -35,7 +32,6 @@ const SearchPage = () => {
     }
   }, [keyword]);
 
-  console.log(searchData);
 
   return (
     <div>
@@ -43,7 +39,6 @@ const SearchPage = () => {
       <Row className="search-page">
         {searchData
           ? searchData.map((e) => {
-              console.log({ e });
               return (
                 <div key={e.id}>
                   <Col>

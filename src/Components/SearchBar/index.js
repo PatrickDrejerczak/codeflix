@@ -16,7 +16,7 @@ const SearchBox = () => {
       <FormControl
         type="text"
         className="mr-sm-2"
-        placeholder="What are you looking for..."
+        placeholder="Keywords"
         value={searchInput}
         onChange={handleInput}
         width="40px"

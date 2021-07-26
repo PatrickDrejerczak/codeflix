@@ -6,6 +6,7 @@ import Carousels from "../../Components/Carousels/Carousels";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import YoutubeEmbed from "../../Components/YoutubeEmbed/YoutubeEmbed";
+import Intro from "../../Components/Intro/Intro"
 import "./style.css";
 const myKey = process.env.REACT_APP_API_KEY;
 
@@ -25,6 +26,8 @@ const HomePage = () => {
     let data = await result.json();
     return data.results;
   };
+  const [randomMovie, setRandomMovie]=useState({});
+
   useEffect(() => {
     let urlCollection = [
       {
@@ -65,7 +68,6 @@ const HomePage = () => {
           "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=35",
       },
     ];
-
     urlCollection.map(async (url) => {
       let moviesList = await getData(Object.values(url)[0]);
       console.log(moviesList);
@@ -77,6 +79,7 @@ const HomePage = () => {
         setPopularTV(moviesList);
       }
       if (Object.keys(url)[0] === "setTrending") {
+        setRandomMovie(moviesList[Math.floor(Math.random()*moviesList.length)]);
         setTrending(moviesList);
       }
       if (Object.keys(url)[0] === "setActionMovies") {
@@ -172,6 +175,7 @@ const HomePage = () => {
         </Modal.Footer>
       </Modal>
       <Header />
+      <Intro movie={randomMovie}/>
       <Carousels
         popularMovies={popularMovies}
         popularTV={popularTV}

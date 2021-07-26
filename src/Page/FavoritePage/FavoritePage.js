@@ -3,7 +3,6 @@ import React from "react";
 const FavoritePage = () => {
   const storage = localStorage.getItem("favorite");
   const data = JSON.parse(storage);
-  // console.log(data);
   return (
     <ul>
       {data ? (
