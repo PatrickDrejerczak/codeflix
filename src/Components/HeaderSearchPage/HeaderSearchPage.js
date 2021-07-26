@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import SearchBar from "../../Components/SearchBar/index.js";
 
 // let trending =
