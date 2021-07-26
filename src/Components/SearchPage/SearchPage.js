@@ -23,8 +23,10 @@ const SearchPage = () => {
     }
     try {
       const getData = async () => {
-        let result = await getData(url);
-        let results = result.results;
+        let result = await fetch(url);
+        let data = await result.json();
+        let results = data.results
+        console.log(results)
         setSearchData(results);
       };
       getData();
