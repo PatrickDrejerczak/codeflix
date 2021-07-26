@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import {
-  Navbar,
-  Container,
-  Nav,
-  InputGroup,
-  FormControl,
-  Button,
-  Col,
-  Row,
-} from "react-bootstrap";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 const SearchBox = () => {
   const [searchInput, setSearchInput] = useState("");
