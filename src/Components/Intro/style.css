@@ -1,7 +1,7 @@
 .banner{
     color : white;
     object-fit : contain;
-    height : 90vh;
+    height : 100vh;
 }
 @media (min-width : 1500px){
     .banner{
@@ -40,7 +40,7 @@
 }
 .banner__contents{
     margin-left: 40px;
-    padding-top: 140px;
+    padding-top: 40vh;
     height : 190px;
 }
 .banner__title{
