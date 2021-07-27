@@ -4,7 +4,6 @@ import { Modal } from "react-bootstrap";
 import YoutubeEmbed from "../YoutubeEmbed/YoutubeEmbed";
 
 const ModalBox = (props) => {
-    console.log({ props })
     return (
         <div>
             <Modal
